@@ -5,13 +5,13 @@ import (
 	"net/http"
 )
 
-type webhook struct {
+type Webhook struct {
 	url string
 }
 
-type ProviderWebhook interface {
-	SetText(text string) *ProviderWebhook
-	SetAdditionalKey(key string, value interface{}) *ProviderWebhook
+type Provider interface {
+	SetText(text string) *Provider
+	SetAdditionalKey(key string, value interface{}) *Provider
 	Do(ctx *context.Context) (*http.Response, error)
 }
 
